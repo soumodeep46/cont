@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata: 
+  name: cont-web-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cont-web-app
+  template:
+    metadata:
+      labels:
+        app: cont-web-app
+    spec:
+      containers:
+      - image: soumodeep46/cont_web
+        name: cont-web
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 5000
