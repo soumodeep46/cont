@@ -25,7 +25,7 @@ podTemplate(label: 'mypod', containers: [
                         sh 'docker-compose build'
                         sh 'docker tag cont_web cont_web_1:1.0.4'
                         sh 'docker images'
-                        sh 'docker-compose up'
+                        sh 'docker-compose up -d'
                     }
                     sh 'docker images'
                 }
